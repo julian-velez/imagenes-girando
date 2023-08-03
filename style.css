@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+
+  }
+  
+  .roulette-container {
+    perspective: 1000px;
+  }
+  
+  .roulette {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate-roulette 6s linear infinite;
+  }
+  
+  .roulette-image {
+    position: absolute;
+    width: 200px;
+    height:200px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    transform-origin: 50% 50%;
+  }
+  
+  .roulette-image:nth-child(1) {
+    transform: rotateY(0deg) translateZ(120px);
+  }
+  .roulette-image:nth-child(2) {
+    transform: rotateY(120deg) translateZ(120px);
+  }
+  .roulette-image:nth-child(3) {
+    transform: rotateY(240deg) translateZ(120px);
+  }
+  
+  .roulette-image img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  
+  @keyframes rotate-roulette {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
